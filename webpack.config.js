@@ -1,9 +1,9 @@
+const webpack = require("webpack");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
-
 const path = require("path");
-const webpack = require("webpack");
-module.exports = {
+
+const config = {
   entry: {
     app: "./assets/js/script.js",
     events: "./assets/js/events.js",
@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jpg$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: "file-loader",
@@ -49,3 +49,5 @@ module.exports = {
   ],
   mode: "development",
 };
+
+module.exports = config;
